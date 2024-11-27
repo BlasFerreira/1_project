@@ -7,7 +7,7 @@ import sequelize from "./db"; // Conexión a la base de datos
 const app = express();
 
 // Define el puerto donde se ejecutará el servidor
-const PORT = 3306;
+const PORT = 3000;
 
 // Configura middlewares globales
 // Permite manejar datos JSON en las solicitudes
