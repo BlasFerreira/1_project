@@ -9,13 +9,14 @@ WORKDIR /app
 COPY package*.json ./
 
 # Instala las dependencias
-RUN npm install  
+RUN npm install 
+RUN  npm install -g nodemon ts-node express
 
 # Copia el resto del código fuente
 COPY . .
 
 # Expone el puerto en el contenedor
-EXPOSE 3000
+EXPOSE 8080
 
 # Comando para ejecutar la aplicación
 CMD ["npm", "run", "dev"]

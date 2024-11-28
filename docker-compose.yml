@@ -6,7 +6,9 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./backend:/app
+      - .:/app
+    command: ["npx", "nodemon", "--legacy-watch", "src/app.ts"]
 
-    command: npm run dev
 
+volumes:
+  db_data:
