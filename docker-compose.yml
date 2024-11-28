@@ -1,0 +1,30 @@
+#docker-compose
+services:
+  db:
+    image: mysql:8
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: fifa_db
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./database:/app
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-ppassword"]
+      interval: 10s         # Intervalo entre verificaciones
+      timeout: 5s           # Tiempo máximo permitido para cada intento
+      retries: 3            # Cantidad de intentos antes de marcar como fallido
+      start_period: 30s     # Tiempo de espera antes de comenzar el healthcheck
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    depends_on:
+      db:
+        condition: service_healthy
