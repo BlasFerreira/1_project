@@ -1,3 +1,4 @@
+//db.ts
 import { Sequelize } from 'sequelize';
 
 const sequelize = new Sequelize(

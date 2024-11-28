@@ -1,3 +1,4 @@
+//playerRoutes.ts
 import { Router } from "express";
 import { getAllPlayers, createPlayer } from "../controllers/playerController";
 
