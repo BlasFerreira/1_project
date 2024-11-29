@@ -10,7 +10,7 @@ COPY package*.json ./
 
 # Instala las dependencias
 RUN npm install 
-RUN  npm install -g nodemon ts-node express
+RUN  npm install -g nodemon ts-node express @types/express
 
 # Copia el resto del código fuente
 COPY . .
@@ -19,4 +19,4 @@ COPY . .
 EXPOSE 8080
 
 # Comando para ejecutar la aplicación
-CMD ["npm", "run", "dev"]
+CMD ["npx", "nodemon", "src/app.ts"]
