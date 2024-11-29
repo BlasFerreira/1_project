@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",                 // Compatible con módulos modernos
+    "module": "ESNext",                 // Usar módulos ES
+    "moduleResolution": "node",         // Resolver módulos como Node.js
+    "outDir": "./dist",                 // Salida de archivos compilados
+    "rootDir": "./src",                 // Directorio raíz del código fuente
+    "strict": true,                     // Activar verificaciones estrictas
+    "esModuleInterop": true,            // Interoperabilidad con módulos CommonJS
+    "forceConsistentCasingInFileNames": true, // Evita inconsistencias en mayúsculas/minúsculas
+    "skipLibCheck": true,               // Omite comprobación de archivos de biblioteca
+    "resolveJsonModule": true           // Permite importar JSON
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
